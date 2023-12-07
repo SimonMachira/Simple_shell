@@ -71,7 +71,7 @@ char *_atoi(size_t num, char *buff, int tok)
 	if (num == 0)
 	{
 		buff[n++] = '\0';
-		buff[m] = '\0';
+		buff[i] = '\0';
 	}
 	while (num)
 	{
