@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 	char *_atoi(size_t num, char *buff, int tok);
 	size_t digit_count(size_t digit);

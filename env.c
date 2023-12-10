@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+#include <errno.h>
 
 /**
  * print_env - print environment variables

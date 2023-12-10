@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * is_number - check character is is a digit
@@ -34,7 +35,7 @@ int exiting(char *const *argue)
 	}
 	else
 	{
-		exit_status = _itoi(argue[1]);
+		exit_status = _atoi(argue[1]);
 
 		switch (exit_status)
 		{
