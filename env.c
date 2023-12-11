@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prnt_env - an environment printing function
+ * prnt_env - environment printing function
  * @arg: the argument cmd
  * Return: 0 if succesful, else -1
  */
