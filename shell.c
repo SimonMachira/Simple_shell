@@ -1,71 +1,64 @@
-/*
- * File: shell.c
- * Author: Quinto Acquino, Simon Machira
- */
-
 #include "main.h"
 #include "stdlib.h"
 #include "unistd.h"
 
-void handle_interrupt(int signal);
+void rec_sig(int sign);
 
 /**
- * handle_interrupt - signal handler for SIGINT
- * @signal: unused attribute
+ * rec_sig - re-display command line when [ctrl + c]
+ * @sign: the attribute parameter
  */
 
-void handle_interrupt(int signal __attribute__((unused)))
+void rec_sig(int sign __attribute__((unused)))
 {
-	print(STDOUT_FILENO, "Simon&quinto$$", 14);
+	print(STDOUT_FILENO, "\n$$", 3);
 }
 
 /**
  * main - point of entry
- * @argv: unused attribute
- * @argc: unused attribute
+ * @argc: total sum of elements in argument array
+ * @arg: the array of arguments
  * Return: 0 always
  */
-int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
+
+int main(int argc __attribute__((unused)), char **arg)
 {
-	char **tokens = NULL;
-	size_t buffer_size = 1;
-	char **input_buffer = NULL;
+	char **tokns = NULL;
+	size_t buffsize = 1;
+	char **mem = NULL;
 
 	while (1)
 
 	{
-		tokens = NULL;
-		input_buffer = NULL;
+		tokns = NULL;
+		mem = NULL;
 
 		if (isatty(STDIN_FILENO))
 
-			write(STDOUT_FILENO, "Simon&quinto$$", 14);
-		signal(SIGINT, handle_interrupt);
+			write(STDOUT_FILENO, "$$", 2);
+		sign(SIGINT, rec_sig);
 
-		if ((read_user_input(&input_buffer)) == 0)
-
+		if ((get_line(&mem)) == 0)
 		{
-			release_memory(&memory_head);
-			release_stats_memory(&stat_mem_head);
-
+			buff_free(&buff_head);
+			free_stat_buff(&buff_stat_head);
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			exit(0);
 		}
 
-		if (input_buffer)
-			tokens = parse_input(input_buffer);
+		if (mem)
+			tokns = strn_tokn(mem);
 
-		if (tokens)
+		if (tokns)
 		{
-			display_error_message(buffer_size);
+			if ((func_cmd(tokns)) == -1)
+				prnt_err(buffsize, arg[0], tokns);
 		}
+		buff_free(&buff_head);
 
-		release_memory(&memory_head);
-		buffer_size++;
+		buffsize++;
 	}
-
-	release_stats_memory(&stat_mem_head);
-
+	free_stat_buff(&free_stat_buff);
 	return (0);
 }

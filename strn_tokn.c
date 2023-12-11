@@ -34,13 +34,13 @@ char **strn_tokn(char *tokn)
 		}
 		while (tokn[lineSet] == '' || tokn[lineSet] == '\t')
 			lineSet++;
-		while (tokcpy < ln)
+		while (tok_cpy < ln)
 		{
 			token[k][tokcpy] = tokn[lineSet];
-			tokcpy++;
+			tok_cpy++;
 			lineSet++;
 		}
-		toks[k][tokcpy] = '\0';
+		toks[k][tok_cpy] = '\0';
 		curr++;
 		k++;
 	}
