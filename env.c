@@ -1,41 +1,38 @@
-/*
- * File: env.c
- * Authors: Acquino, Simon Machira
- */
-
 #include "main.h"
-#include <errno.h>
 
 /**
- * print_env - print environment variables
- * @argue: cmd arguments (unused in implementation)
- *
- * Return: 0 if successful, else -1
+ * prnt_env - an environment printing function
+ * @arg: the argument cmd
+ * Return: 0 if succesful, else -1
  */
-int print_env(char *const *argue)
+
+int prnt_env(char *const *arg)
 {
-	size_t m = 0;
+        size_t leng;
+        size_t k = 0;
 
-	if (!argue[1])
+        if (!arg[1])
+        {
+                while (environ[k])
+                {
+                        leng = strn_len(environ[k]);
+
+                        if ((write(STDOUT_FILENO, environ[k], leng)) == -1)
+                        {
+                                return (-1);
+                        }
+
+                        if ((write(STDOUT_FILENO, environ[k], leng)) == -1)
+                        {
+                                return (-1);
+                        }
+                        k++;
+                }
+        }
+        else
 	{
-		while (environ[m])
-		{
-			size_t length = _strlen(environ[m]);
-
-			if (write(STDOUT_FILENO, environ[m], length) == -1)
-			{
-
-				return (-1);
-			}
-			m++;
-		}
-	}
-	else
-	{
-		errno = ENOENT;
-
-		return (-1);
-	}
-
-	return (0);
+                erno = ENOENT;
+                return (-1);
+        }
+        return (0);
 }
