@@ -74,10 +74,42 @@ size_t num_path(char *ar_path);
 int process_builtin(char *const *arg);
 int ext_command(char *const *arg);
 int cd_dir(char *const *arg);
+<<<<<<< HEAD
 int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
 int _strcomp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
+=======
+int exec_cmd(char *const *arg);
+
+/*dir change.c prototypes*/
+int cd_home(void);
+int cd_current(void);
+int cd_prnt(void);
+int cd_user(char *arg);
+char *environ_var(char *environ_n);
+int cd_wd(char *dir_path);
+int cd_before(void);
+
+/*to check*/
+void argument()
+
+/*set pwd functions*/
+
+/*atoi prototype*/
+char *_atoi(size_t num, char *buff, int tok);
+size_t digit_count(size_t digit);
+
+/*major functions prototypes*/
+int _stoi(char *str);
+void err_print(size_t rpt, char *arg, char **token);
+char *gen_err(char *ptr2, char **token);
+int terminate(char *const *arg);
+int isDigit(char str);
+
+
+
+>>>>>>> 3876568c2365941232ec54511876fae2bc92d0d3
 char *_atoi(size_t num, char *buff, int tok);
 size_t digit_count(size_t digit);
 int _stoi(char *str);

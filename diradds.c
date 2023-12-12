@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <errno.h>
 
 /**
  * environ_var - creates copy of environment
