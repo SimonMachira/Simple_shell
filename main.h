@@ -47,6 +47,8 @@ typedef struct shell_cmds
 
 /*Main code prototype goes under here*/
 
+
+
 /*Malloc program prototype go under here*/
 char *mal_alloc(char *pointer, size_t val);
 char *new_alloc(char *pointer, size_t buffsize_new);
@@ -67,6 +69,23 @@ char **gen_path(char *const *arg);
 size_t path_avail(char *const *arg);
 size_t arg_len(char ptr_path);
 size_t num_path(char *ar_path);
+size_t tokn_ln(char *strn, size_t spec);
+size_t tokn_cnt(char *strn);
+char **strn_tokn(char *tokn);
+char **gen_path(char *const *arg);
+size_t path_avail(char *const *arg);
+size_t arg_len(char ptr_path);
+size_t num_path(char *ar_path);
+char **strn_tokn(char *tokn);
+void rec_sig(int sign);
+void rec_sig(int sign __attribute__((unused)));
+int main(int argc __attribute__((unused)), char **arg);
+ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start);
+int buff_alloc(char *buf);
+void shft_bf(char *buf, ssize_t q);
+ssize_t get_line(char **mem);
+size_t strn_len(const char *strng);
+
 
 /*external variables go here*/
 
@@ -74,6 +93,11 @@ size_t num_path(char *ar_path);
 int process_builtin(char *const *arg);
 int ext_command(char *const *arg);
 int cd_dir(char *const *arg);
+int oldPWD_set(void);
+int PWD_set(char *var_v);
+int _strcomp(const char *strn1, const char *strn2);
+int strn_compl(const char *strn1, const char *strn2, size_t q);
+
 <<<<<<< HEAD
 int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
@@ -95,6 +119,8 @@ int cd_before(void);
 void argument()
 
 /*set pwd functions*/
+
+
 
 /*atoi prototype*/
 char *_atoi(size_t num, char *buff, int tok);
