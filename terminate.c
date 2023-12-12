@@ -27,20 +27,20 @@ int terminate(char *const *arg)
 
 	if (arg[1] == NULL)
 	{
-		free_buff(&buff_head);
+		buff_free(&buff_head);
 		free_stat_buff(&buff_stat_head);
 		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-	result = _stoi(arg[]);
+	result = _stoi(arg[1]);
 
 	switch (result)
 	{
 		case (-1):
 			return (EXIT_FAILURE);
 		default:
-			free_buff(&buff_head);
+			buff_free(&buff_head);
 			free_stat_buff(&buff_stat_head);
 			exit(result);
 	}

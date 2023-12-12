@@ -16,10 +16,10 @@
 #include <unistd.h>
 #include <signal.h>
 
-#define
-#define
-#define
-#define
+#define VAL 1024
+#define args_count 150
+#define buffe_size 1024
+#define total_args 1024
 
 /**
  * struct mem_record - struct
@@ -88,6 +88,13 @@ size_t strn_len(const char *strng);
 
 
 /*external variables go here*/
+extern char **environ;
+extern buff_list *buff_head;
+buff_list *buff_head;
+extern buff_list *buff_stat_head;
+buff_list *buff_stat_head;
+extern size_t msg_err;
+size_t msg_err;
 
 /*execution prototypes go here*/
 int process_builtin(char *const *arg);
@@ -98,12 +105,12 @@ int PWD_set(char *var_v);
 int _strcomp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
 
-<<<<<<< HEAD
+
 int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
 int _strcomp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
-=======
+
 int exec_cmd(char *const *arg);
 
 /*dir change.c prototypes*/
@@ -129,14 +136,11 @@ void err_print(size_t rpt, char *arg, char **token);
 char *gen_err(char *ptr2, char **token);
 int terminate(char *const *arg);
 int isDigit(char str);
+char *str_reverse(char *str);
+char copy_strnl(char *s1, const char *s2, size_t t);
+char *cat_strn(char *app_str, const char *res_str);
 
 
 
->>>>>>> 3876568c2365941232ec54511876fae2bc92d0d3
-char *_atoi(size_t num, char *buff, int tok);
-size_t digit_count(size_t digit);
-int _stoi(char *str);
-int PWD_set(char *var_v);
-int oldPWD_set(void);
 
 #endif
