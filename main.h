@@ -115,9 +115,6 @@ char *var_get (char *environ_n);
 int cd_wd(char *dir_path);
 int cd_before(void);
 
-/*to check*/
-void argument()
-
 /*set pwd functions*/
 
 

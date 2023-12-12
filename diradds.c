@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * environ_var - creates copy of environment
+ * var_get - creates copy of environment
  * @environ_n: environment variable
  * Return: Success path else NULL
  */
 
-char *environ_var(char *environ_n)
+char *var_get(char *environ_n)
 {
 	size_t path_len = 0;
 	size_t env_len = 0;
