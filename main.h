@@ -68,7 +68,7 @@ int cd_home(void);
 int cd_current(void);
 int cd_prnt(void);
 int cd_user(char *arg);
-char *environ_var(char *environ_n);
+char *var_get (char *environ_n);
 int cd_wd(char *dir_path);
 int cd_before(void);
 
