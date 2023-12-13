@@ -22,7 +22,7 @@ ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start)
 		val_cp++;
 	if (res_str[k] == '\n')
 	{
-		*app_str = mal_alloc(app_str, (sizeof(char) * (val_cp + *start + 1)));
+		*app_str = mal_alloc(*app_str, (sizeof(char) * (val_cp + *start + 1)));
 		if (!(*app_str))
 			return (-1);
 		copy_stinl((*app_str + *start), res_str, val_cp);
