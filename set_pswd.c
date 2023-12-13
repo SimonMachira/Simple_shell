@@ -11,7 +11,7 @@ int oldPWD_set(void)
 	size_t k;
 	char *upd_val = NULL;
 	char *pswd_ref = "PSWD=";
-	char prev_ref = "OLDPSWD=";
+	char *prev_ref = "OLDPSWD=";
 	size_t pswd_sz = 0;
 	char *pswd = NULL;
 

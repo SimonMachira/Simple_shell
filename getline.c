@@ -89,12 +89,12 @@ ssize_t get_line(char **mem)
 {
 	ssize_t cp = 0, val = 0;
 	ssize_t start = 0;
-	static char ln[TOT_ARG];
+	static char ln[total_args];
 	static ssize_t tot;
 
 	if ((buff_alloc(ln)) == 0)
 	{
-		while ((val = read(STDIN_FILENO, ln, TOT_ARG - 1)) > 0)
+		while ((val = read(STDIN_FILENO, ln, total_args - 1)) > 0)
 		{
 			if (val == -1)
 				return (-1);
