@@ -18,7 +18,7 @@ char *mal_alloc(char *pointer, size_t val)
 		return (NULL);
 	}
 
-	buff_head = new_buff(&buff_head);
+	buff_head = add_buff(&buff_head);
 	return (pointer);
 }
 
@@ -48,7 +48,7 @@ char *new_alloc(char *pointer, size_t buffsize_new)
 	if (pointer)
 	{
 		for (k = 0; k < before && k < buffsize_new; k++)
-			*(b uff_ptr + k) = *(pointer + k);
+			*(buff_ptr + k) = *(pointer + k);
 
 		free(pointer);
 	}
@@ -71,7 +71,7 @@ void buff_free(buff_list **head)
 		while (*head)
 		{
 			now = *head;
-			*head = (*head)->now;
+			*head = (*head)->next;
 			if (now->buff_ptr)
 				free(now->buff_ptr);
 			free(now);
@@ -96,8 +96,8 @@ buff_list *add_buff(buff_list **head, char *pointer)
 	if (!node_add)
 		return (NULL);
 
-	add_node->buff_ptr = pointer;
-	add_node->now = *head;
+	node_add->buff_ptr = pointer;
+	node_add->next = *head;
 	*head = node_add;
 
 	return (*head);
@@ -115,7 +115,7 @@ char *buff_set(char *k, char c, unsigned int b)
 {
 	unsigned int n = 0;
 
-	while (n < c)
+	while (n < b)
 	{
 		k[n] = c;
 		n++;
