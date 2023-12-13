@@ -8,7 +8,7 @@
 
 int cd_dir(char *const *arg)
 {
-	if (arg[1] == NULL || !(strn_compl(arg[1], "~")))
+	if (arg[1] == NULL || !(str_comp(arg[1], "~")))
 	{
 	if (cd_home())
 		return (-1);

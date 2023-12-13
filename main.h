@@ -140,6 +140,7 @@ int isDigit(char str);
 char *str_reverse(char *str);
 char *copy_strnl(char *s1, const char *s2, size_t t);
 char *cat_strn(char *app_str, const char *res_str);
+int _environ(char *const *arg);
 
 
 
