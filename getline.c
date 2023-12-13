@@ -94,7 +94,7 @@ ssize_t get_line(char **mem)
 
 	if ((buff_alloc(ln)) == 0)
 	{
-		while ((val = read(STD_FILENO, ln, TOT_ARG - 1)) > 0)
+		while ((val = read(STDIN_FILENO, ln, TOT_ARG - 1)) > 0)
 		{
 			if (val == -1)
 				return (-1);
