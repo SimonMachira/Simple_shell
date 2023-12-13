@@ -67,7 +67,7 @@ ssize_t get_line(char **mem);
 size_t strn_len(const char *strng);
 char **gen_path(char *const *arg);
 size_t path_avail(char *const *arg);
-size_t arg_len(char ptr_path);
+size_t arg_len(char *ptr_path);
 size_t num_path(char *ar_path);
 size_t tokn_ln(char *strn, size_t spec);
 size_t tokn_cnt(char *strn);

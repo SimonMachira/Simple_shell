@@ -1,7 +1,7 @@
 #include "main.h"
 
 size_t path_avail(char *const *arg);
-size_t arg_len(char ptr_path);
+size_t arg_len(char *ptr_path);
 size_t num_path(char *ar_path);
 
 /**
@@ -35,12 +35,12 @@ size_t path_avail(char *const *arg)
 	size_t nameOfpath = 0;
 	size_t k = 0;
 
-	for (arg[0][k]; k++)
+	for (;arg[0][k]; k++)
 	{
 		if (arg[0][k] == '/')
 		{
-		nameOfpath = 1;
-		break;
+			nameOfpath = 1;
+			break;
 		}
 	}
 	return (nameOfpath);
@@ -67,7 +67,7 @@ size_t num_path(char *ar_path)
 		{
 			val++;
 		}
-		k++
+		k++;
 	}
 	return (val);
 }
