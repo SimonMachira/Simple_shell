@@ -74,7 +74,7 @@ void shft_bf(char *buf, ssize_t q)
 		k++;
 		q++;
 	}
-	buff_set(&buf[k], (1024 - q));
+	buff_set(&buf[k], 0, (1024 - q));
 }
 
 
