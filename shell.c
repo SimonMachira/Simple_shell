@@ -2,16 +2,16 @@
 #include "stdlib.h"
 #include "unistd.h"
 
-void rec_sig(int sign);
+void rec_sig(int signal);
 
 /**
  * rec_sig - re-display command line when [ctrl + c]
- * @sign: the attribute parameter
+ * @signal: the attribute parameter
  */
 
-void rec_sig(int sign __attribute__((unused)))
+void rec_sig(int signal __attribute__((unused)))
 {
-	print(STDOUT_FILENO, "\n$$", 3);
+	write(STDOUT_FILENO, "\n&", 3);
 }
 
 /**
@@ -25,7 +25,7 @@ int main(int argc __attribute__((unused)), char **arg)
 {
 	char **tokns = NULL;
 	size_t buffsize = 1;
-	char **mem = NULL;
+	char *mem = NULL;
 
 	while (1)
 
@@ -36,7 +36,7 @@ int main(int argc __attribute__((unused)), char **arg)
 		if (isatty(STDIN_FILENO))
 
 			write(STDOUT_FILENO, "$$", 2);
-		sign(SIGINT, rec_sig);
+		signal(SIGINT, rec_sig);
 
 		if ((get_line(&mem)) == 0)
 		{
