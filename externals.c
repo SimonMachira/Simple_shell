@@ -14,7 +14,7 @@ int ext_command(char *const *arg)
 
 	if (path_exists(arg))
 	{
-		array_path = (char **)mal_alloc((char *)path_ar, (sizeof(char *) * 2));
+		array_path = (char **)mal_alloc((char *)array_path, (sizeof(char *) * 2));
 		array_path[0] = mal_alloc(array_path[0], (sizeof(char) * (strn_len(arg[0]) + 1)));
 		copy_strnl(array_path[0], arg[0], strn_len(arg[0]));
 	array_path[1] = NULL;

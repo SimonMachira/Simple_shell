@@ -34,12 +34,12 @@ typedef struct mem_record
 } buff_list;
 
 /**
- * struct shell_cmd - builtin functions
+ * struct_shell_cmd - builtin functions
  * @command: command name
  * @pr: pointer to function
  */
 
-typedef struct shell_cmds
+typedef struct_shell_cmds
 {
 	char *command;
 	int (*pr)(char *const*);
@@ -119,7 +119,7 @@ int cd_home(void);
 int cd_current(void);
 int cd_prnt(void);
 int cd_user(char *arg);
-char *var_get (char *environ_n);
+char *var_get(char *environ_n);
 int cd_wd(char *dir_path);
 int cd_before(void);
 
