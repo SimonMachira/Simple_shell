@@ -76,9 +76,9 @@ int PWD_set(char *var_v)
 			copy_strnl(environ[n], title, title_sz);
 			cat_strn(environ[n], var_v);
 
-			if (environ[n][title_sz + var_v - 1] == '/')
+			if (var_v[vnum_len - 1] == '/')
 			{
-				environ[n][title_sz + var_v - 1] = '\0';
+				var_v[vnum_len - 1] = '\0';
 			}
 			return (0);
 		}
