@@ -13,9 +13,9 @@ char *var_get(char *environ_n)
 	size_t k = 0;
 	char *path_size = NULL;
 
-	for (environ[k]; k++)
+	for (; environ[k]; k++)
 	{
-		if ((strn_compl(environ_n, environ[j], env_len)) == 0)
+		if ((strn_compl(environ_n, environ[k], env_len)) == 0)
 		{
 			path_len = (strn_len(environ[k]) - env_len);
 			path_size = mal_alloc(path_size, (sizeof(char) * (path_len + 1)));
@@ -23,7 +23,7 @@ char *var_get(char *environ_n)
 			{
 			return (NULL);
 			}
-			copy_strl(path_size, &environ[k][env_len], path_len);
+			copy_strnl(path_size, &environ[k][env_len], path_len);
 			return (path_size);
 		}
 	}
@@ -45,7 +45,7 @@ int cd_wd(char *dir_path)
 
 	if (chdir(dir_path) == 0)
 	{
-		if (path_exists(&dir_path))
+		if (path_avail(&dir_path))
 		{
 			oldPWD_set();
 			PWD_set(dir_path);
@@ -91,7 +91,7 @@ int cd_before(void)
 		oldPWD_set();
 		PWD_set(dir_val);
 
-		write(STDOUT_FILENO, dir_val, (_strn_len(dir_val)));
+		write(STDOUT_FILENO, dir_val, (strn_len(dir_val)));
 		write(STDOUT_FILENO, "n", 1);
 		return (0);
 	}
