@@ -20,7 +20,7 @@ int ext_command(char *const *arg)
 	array_p[1] = NULL;
 	}
 	else
-		array_p = path_avail(arg);
+		array_p = gen_path(arg);
 
 	for (k = 0; array_p[k]; k++)
 		if (access(array_p[k], (R_OK | X_OK)) == 0)
@@ -35,7 +35,7 @@ int ext_command(char *const *arg)
 
 					exit(EXIT_FAILURE);
 				default:
-					if ((waitpid(pid, &condition, 0)) == -1)
+					if ((waitpid(pid, &status, 0)) == -1)
 						return (-1);
 					else
 						return (0);
@@ -55,7 +55,7 @@ int process_builtin(char *const *arg)
 {
 	shell_cmd builtin_cmd[] = {
 		{"exit", terminate},
-		{"env", environ},
+		{"env", _environ},
 		{"cd", cd_dir},
 		{NULL, NULL}
 	};
@@ -64,9 +64,9 @@ int process_builtin(char *const *arg)
 	int (*cmd_func_ptr)(char *const *arg);
 
 	for (k = 0; builtin_cmd[k].command; k++)
-		if ((str_comp(arg[0], builtin_cmd[k].command)) == 0)
+		if ((strn_compl(arg[0], builtin_cmd[k].command)) == 0)
 		{
-			cmd_func_ptr = builtin_cmd[k].fp;
+			cmd_func_ptr = builtin_cmd[k].pr;
 
 			if ((cmd_func_ptr(arg)) == 0)
 				return (0);

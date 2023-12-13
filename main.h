@@ -138,7 +138,7 @@ char *gen_err(char *ptr2, char **token);
 int terminate(char *const *arg);
 int isDigit(char str);
 char *str_reverse(char *str);
-char copy_strnl(char *s1, const char *s2, size_t t);
+char *copy_strnl(char *s1, const char *s2, size_t t);
 char *cat_strn(char *app_str, const char *res_str);
 
 

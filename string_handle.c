@@ -85,6 +85,6 @@ char *cat_strn(char *app_str, const char *res_str)
 		app_str[k] = res_str[t];
 		k++;
 	}
-	app_str[m] = '\0';
+	app_str[k] = '\0';
 	return (app_str);
 }
