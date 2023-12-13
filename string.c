@@ -1,7 +1,7 @@
 #include "main.h"
 
 size_t strn_len(const char *strng);
-int _strcomp(const char *strn1, const char *strn2);
+int str_comp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
 
 /**
@@ -48,7 +48,7 @@ int _strcomp(const char *strn1, const char *strn2)
 }
 
 /**
- * strn_compl - a two string comparison function
+ * str_comp - a two string comparison function
  * @strn1: first string to compare
  * @strn2: second string to compare
  * @q: n=sum of strings to compare

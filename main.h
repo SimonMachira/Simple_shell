@@ -102,13 +102,13 @@ int ext_command(char *const *arg);
 int cd_dir(char *const *arg);
 int oldPWD_set(void);
 int PWD_set(char *var_v);
-int _strcomp(const char *strn1, const char *strn2);
+int str_comp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
 
 
 int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
-int _strcomp(const char *strn1, const char *strn2);
+int str_comp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
 
 

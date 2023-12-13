@@ -55,7 +55,7 @@ int process_builtin(char *const *arg)
 {
 	shell_cmd builtin_cmd[] = {
 		{"exit", terminate},
-		{"env", _environ},
+		{"env", environ},
 		{"cd", cd_dir},
 		{NULL, NULL}
 	};
@@ -64,7 +64,7 @@ int process_builtin(char *const *arg)
 	int (*cmd_func_ptr)(char *const *arg);
 
 	for (k = 0; builtin_cmd[k].command; k++)
-		if ((strn_compl(arg[0], builtin_cmd[k].command)) == 0)
+		if ((str_comp(arg[0], builtin_cmd[k].command)) == 0)
 		{
 			cmd_func_ptr = builtin_cmd[k].pr;
 
