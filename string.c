@@ -48,14 +48,14 @@ int _strcomp(const char *strn1, const char *strn2)
 }
 
 /**
- * _strcomp - two string comparison function
+ * strn_compl - a two string comparison function
  * @strn1: first string to compare
  * @strn2: second string to compare
  * @q: n=sum of strings to compare
  * Return: 0 always
  */
 
-int _strcomp(const char *strn1, const char *strn2, size_t q)
+int strn_compl(const char *strn1, const char *strn2, size_t q)
 {
 	size_t k = 0;
 
@@ -68,6 +68,6 @@ int _strcomp(const char *strn1, const char *strn2, size_t q)
 		k++;
 	}
 	if (k < q && strn2[k] != '\0')
-		return (strn1[k] - strn[k]);
+		return (strn1[k] - strn2[k]);
 	return (0);
 }

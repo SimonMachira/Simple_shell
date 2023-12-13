@@ -13,7 +13,7 @@ ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start);
  * Return: 0 always
  */
 
-ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start);
+ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start)
 {
 	ssize_t val_cp = 0;
 	ssize_t k;

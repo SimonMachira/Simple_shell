@@ -15,13 +15,13 @@ char **strn_tokn(char *tokn)
 	size_t ln = 0, curr = 1;
 	size_t k = 0, lineSet = 0, tok_cpy = 0;
 
-	amnt = tokn_cnt(tok);
+	amnt = tokn_cnt(tokn);
 	if (amnt == 0)
 	{
 		return (NULL);
 	}
 	msiz = (amnt + 1) * (sizeof(char *));
-	toks = (char **) mg_alloc((char *)toks, msiz);
+	toks = (char **) mal_alloc((char *)toks, msiz);
 	if (toks == NULL)
 		return (NULL);
 	while (curr <= amnt)
@@ -32,11 +32,11 @@ char **strn_tokn(char *tokn)
 		{
 			return (NULL);
 		}
-		while (tokn[lineSet] == '' || tokn[lineSet] == '\t')
+		while (tokn[lineSet] == ' ' || tokn[lineSet] == '\t')
 			lineSet++;
 		while (tok_cpy < ln)
 		{
-			token[k][tokcpy] = tokn[lineSet];
+			toks[k][tok_cpy] = tokn[lineSet];
 			tok_cpy++;
 			lineSet++;
 		}

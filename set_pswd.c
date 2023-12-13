@@ -62,6 +62,7 @@ int PWD_set(char *var_v)
 	char title = "PSWD";
 
 	vnum_len = strn_len(var_v);
+	size_t var_v_len = strn_len(var_v);
 
 	n = 0;
 	while (environ[n])
