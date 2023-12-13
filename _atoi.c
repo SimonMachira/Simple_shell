@@ -1,5 +1,4 @@
 #include "main.h"
-#include <ctype.h>
 
 	char *_atoi(size_t num, char *buff, int tok);
 	size_t digit_count(size_t digit);
@@ -21,7 +20,7 @@ int _stoi(char *str)
 	}
 	for (; str[n] != '\0'; n++)
 	{
-		if (digit(str[n]))
+		if (isDigit(str[n]))
 		{
 			result = result * 10 + str[n] - '0';
 		}
@@ -82,6 +81,6 @@ char *_atoi(size_t num, char *buff, int tok)
 	}
 	if (isNegative < 0)
 		buff[n] = '\0';
-	return (_revstr(buff));
+	return (str_reverse(buff));
 
 }
