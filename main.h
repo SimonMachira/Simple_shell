@@ -85,7 +85,7 @@ int buff_alloc(char *buf);
 void shft_bf(char *buf, ssize_t q);
 ssize_t get_line(char **mem);
 size_t strn_len(const char *strng);
-
+void argument(void);
 
 /*external variables go here*/
 extern char **environ;
@@ -110,10 +110,8 @@ int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
 int _strcomp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
-<<<<<<< HEAD
-=======
 
->>>>>>> fcbdf63fdbb043614d01a7591b2d238b16b36461
+
 int exec_cmd(char *const *arg);
 
 /*dir change.c prototypes*/
@@ -125,11 +123,6 @@ char *var_get (char *environ_n);
 int cd_wd(char *dir_path);
 int cd_before(void);
 
-<<<<<<< HEAD
-/*to check*/
-void argument(void)
-=======
->>>>>>> fcbdf63fdbb043614d01a7591b2d238b16b36461
 /*set pwd functions*/
 
 
