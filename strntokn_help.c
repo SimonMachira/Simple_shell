@@ -49,7 +49,7 @@ size_t tokn_cnt(char *strn)
 
 	while (strn[k] != '\0')
 	{
-		if (strn[k + 1] == ' ' || strn[k + 1] == '\t' || strn[m + 1] == '\0')
+		if (strn[k + 1] == ' ' || strn[k + 1] == '\t' || strn[k + 1] == '\0')
 			amnt++;
 		k++;
 	}
