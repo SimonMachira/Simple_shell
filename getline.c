@@ -59,12 +59,12 @@ int buff_alloc(char *buf)
 }
 
 /**
- * shft_bf - function reallocating buffer to the left
+ * buff_shft - function reallocating buffer to the left
  * @buf: memory allocated to shift
  * @q: num of bytz for allocated memory to shift
  */
 
-void shft_bf(char *buf, ssize_t q)
+void buff_shft(char *buf, ssize_t q)
 {
 	ssize_t k = 0;
 

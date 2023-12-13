@@ -62,7 +62,7 @@ size_t tokn_cnt(char *strn);
 void rec_sig(int sign);
 void rec_sig(int sign __attribute__((unused)));
 ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start);
-void shft_bf(char *buf, ssize_t q);
+void buff_shft(char *buf, ssize_t q);
 ssize_t get_line(char **mem);
 size_t strn_len(const char *strng);
 char **gen_path(char *const *arg);

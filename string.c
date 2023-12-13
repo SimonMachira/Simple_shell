@@ -32,7 +32,7 @@ size_t strn_len(const char *strng)
  * Return: number
  */
 
-int _strcomp(const char *strn1, const char *strn2)
+int str_comp(const char *strn1, const char *strn2)
 {
 	int k = 0;
 
