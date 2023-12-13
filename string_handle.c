@@ -2,7 +2,7 @@
 
 char *str_reverse(char *str);
 char *cat_strn(char *app_str, const char *res_str);
-char *copy_strnl
+char *copy_strnl;
 
 /**
  * str_reverse - reverses a string
@@ -47,19 +47,19 @@ char *str_reverse(char *str)
  * Return: s1
  */
 
-char copy_strnl(char *s1, const char *s2, size_t t)
+char *copy_strnl(char *s1, const char *s2, size_t t)
 {
 	size_t k = 0;
 
 	while (k < t && s2[k] != '\0')
 	{
-	s1[k]  = s2[k];
-	k++;
+		s1[k]  = s2[k];
+		k++;
 	}
 	while (k < t)
 	{
-	s1[k] = '\0';
-	k++;
+		s1[k] = '\0';
+		k++;
 	}
 	return (s1);
 }

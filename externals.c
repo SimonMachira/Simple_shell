@@ -55,8 +55,8 @@ int process_builtin(char *const *arg)
 {
 	shell_cmd builtin_cmd[] = {
 		{"exit", terminate},
-		{"env", display_env},
-		{"cd", change_dir},
+		{"env", environ},
+		{"cd", cd_dir},
 		{NULL, NULL}
 	};
 
