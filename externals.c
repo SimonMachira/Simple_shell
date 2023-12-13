@@ -9,10 +9,10 @@
 int ext_command(char *const *arg)
 {
 	char **array_p = NULL;
-	int condition, k;
+	int status, k;
 	pid_t pid;
 
-	if (path_exists(arg))
+	if (path_avail(arg))
 	{
 		array_p = (char **)mal_alloc((char *)array_p, (sizeof(char *) * 2));
 		array_p[0] = mal_alloc(array_p[0], (sizeof(char) * (strn_len(arg[0]) + 1)));
@@ -20,9 +20,9 @@ int ext_command(char *const *arg)
 	array_p[1] = NULL;
 	}
 	else
-		array_p = get_path(arg);
+		array_p = path_avail(arg);
 
-	for (k = 0; array_p[j]; j++)
+	for (k = 0; array_p[k]; k++)
 		if (access(array_p[k], (R_OK | X_OK)) == 0)
 		{
 			switch ((pid = fork()))
@@ -63,12 +63,12 @@ int process_builtin(char *const *arg)
 	int k;
 	int (*cmd_func_ptr)(char *const *arg);
 
-	for (k = 0; builtin_cmd[k].cmd; k++)
-		if ((str_comp(arg[0], builtin_cmd[k].cmd)) == 0
+	for (k = 0; builtin_cmd[k].command; k++)
+		if ((str_comp(arg[0], builtin_cmd[k].command)) == 0)
 		{
 			cmd_func_ptr = builtin_cmd[k].fp;
 
-			if ((cmd_func_ptr(arg) == 0)
+			if ((cmd_func_ptr(arg)) == 0)
 				return (0);
 
 			msg_err = 3;

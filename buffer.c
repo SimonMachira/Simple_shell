@@ -18,7 +18,7 @@ char *mal_alloc(char *pointer, size_t val)
 		return (NULL);
 	}
 
-	buff_head = add_buff(&buff_head);
+	buff_head = add_buff(&buff_head, pointer);
 	return (pointer);
 }
 

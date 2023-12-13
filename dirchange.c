@@ -35,7 +35,7 @@ int cd_dir(char *const *arg)
 	}
 	else
 	{
-		if (cd_arg(arg[1]))
+		if (cd_wd(arg[1]))
 			return (-1);
 	}
 	return (0);
@@ -107,7 +107,7 @@ int cd_prnt(void)
 	{
 		for (k = strn_len(dir_val); dir_val[k] != '/';)
 			k--;
-		for (; dir_val[k]; k++;)
+		for (; dir_val[k]; k++)
 			dir_val[k] = '\0';
 
 		if (chdir(dir_val) == 0)
@@ -131,7 +131,7 @@ int cd_user(char *arg)
 	char *user_path = NULL;
 	size_t name_len = strn_len(arg);
 
-	user_path = mal_alloc(user_path, (sizeof(chsr) * (6 + name_len)));
+	user_path = mal_alloc(user_path, (sizeof(char) * (6 + name_len)));
 	if (!user_path)
 		return (-1);
 	copy_strnl(user_path, "/home/", 6);

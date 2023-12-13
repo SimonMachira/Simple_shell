@@ -16,8 +16,8 @@ int exec_cmd(char *const *arg)
 
 	if (msg_err == 2)
 	{
-		var = (ext_command(arg));
-		if (var == 0)
+		value = (ext_command(arg));
+		if (value == 0)
 		{
 			return (0);
 		}

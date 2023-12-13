@@ -2,7 +2,7 @@
 
 char *str_reverse(char *str);
 char *cat_strn(char *app_str, const char *res_str);
-char *copy_strnl;
+char *copy_strnl(char *s1, const char *s2, size_t t);
 
 /**
  * str_reverse - reverses a string

@@ -13,7 +13,7 @@ void err_print(size_t rpt, char *arg, char **token)
 	size_t arg_len = strn_len(arg);
 	char *ptr1 = NULL, *ptr2 = NULL, *ptr3 = NULL;
 	size_t ptr2_len, ptr1_len;
-	size_t num = num_count(rpt);
+	size_t num = digit_count(rpt);
 	size_t mem_sum = arg_len + num + token_length + token_length2 + 6;
 
 	switch (msg_err)
@@ -35,7 +35,7 @@ void err_print(size_t rpt, char *arg, char **token)
 	_atoi(rpt, ptr2, 10);
 	ptr2_len = strn_len(ptr2);
 	mem_sum += ptr2_len;
-	ptr1 = mal_alloc(pyr1, sizeof(char) * mem_sum);
+	ptr1 = mal_alloc(ptr1, sizeof(char) * mem_sum);
 	copy_strnl(ptr1, arg, arg_len);
 	cat_strn(ptr1, ": ");
 	cat_strn(ptr1, ptr2);
