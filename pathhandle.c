@@ -23,7 +23,7 @@ char **gen_path(char *const *arg)
 			ptr_path = &environ[env][5];
 			val = num_path(ptr_path);
 			ar_path = (char **)mal_alloc((char *)ar_path, (sizeof(char *) * (val + 1)));
-			while (k < ar_path)
+			while (k < val)
 			{
 				buff_size = (arg_len(ptr_path) + strn_len(arg[0]) + 2);
 				ar_path[k] = mal_alloc(ar_path[k], (sizeof(char) * buff_size));
@@ -31,7 +31,7 @@ char **gen_path(char *const *arg)
 				cat_strn(ar_path[k], "/");
 				cat_strn(ar_path[k], arg[0]);
 
-				ptr_path = (ptr_path + (arg_len(ptr_path) = 1));
+				ptr_path = (ptr_path + (arg_len(ptr_path) + 1));
 				k++;
 			}
 			ar_path[k] = NULL;

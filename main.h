@@ -74,7 +74,7 @@ size_t tokn_cnt(char *strn);
 char **strn_tokn(char *tokn);
 char **gen_path(char *const *arg);
 size_t path_avail(char *const *arg);
-size_t arg_len(char ptr_path);
+size_t arg_len(char *ptr_path);
 size_t num_path(char *ar_path);
 char **strn_tokn(char *tokn);
 void rec_sig(int sign);
