@@ -33,9 +33,9 @@ int oldPWD_set(void)
 		environ[k] = new_alloc(upd_val, (sizeof(char) * (7 + pswd_sz + 1)));
 		if (!environ[k])
 			return (-1);
-		new_buff(&buff_stat_head, environ[k]);
+		add_buff(&buff_stat_head, environ[k]);
 
-		copy_strnl(environ[j], prev_ref, 7);
+		copy_strnl(environ[k], prev_ref, 7);
 		cat_strn(environ[k], pswd);
 
 		return (0);
@@ -57,12 +57,11 @@ int PWD_set(char *var_v)
 {
 	size_t n = 0;
 	char *upd_val = NULL;
-	size_t *vnum_len;
+	size_t vnum_len;
 	size_t title_sz = 4;
-	char title = "PSWD";
+	char *title = "PSWD";
 
 	vnum_len = strn_len(var_v);
-	size_t var_v_len = strn_len(var_v);
 
 	n = 0;
 	while (environ[n])
@@ -73,7 +72,7 @@ int PWD_set(char *var_v)
 			if (!environ[n])
 				return (-1);
 
-			new_buff(&buff_stat_head, environ[n]);
+			add_buff(&buff_stat_head, environ[n]);
 			copy_strnl(environ[n], title, title_sz);
 			cat_strn(environ[n], var_v);
 
