@@ -52,13 +52,13 @@ int main(int argc __attribute__((unused)), char **arg)
 
 		if (tokns)
 		{
-			if ((func_cmd(tokns)) == -1)
-				prnt_err(buffsize, arg[0], tokns);
+			if ((exec_cmd(tokns)) == -1)
+				err_print(buffsize, arg[0], tokns);
 		}
 		buff_free(&buff_head);
 
 		buffsize++;
 	}
-	free_stat_buff(&free_stat_buff);
+	free_stat_buff(&buff_stat_head);
 	return (0);
 }
