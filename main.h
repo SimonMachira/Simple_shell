@@ -31,7 +31,7 @@ typedef struct mem_record
 {
 	char *buff_ptr;
 	struct mem_record *next;
-}buff_list;
+} buff_list;
 
 /**
  * struct shell_cmd - builtin functions
@@ -43,7 +43,7 @@ typedef struct shell_cmds
 {
 	char *command;
 	int (*pr)(char *const*);
-}shell_cmd;
+} shell_cmd;
 
 /*Main code prototype goes under here*/
 
@@ -103,7 +103,6 @@ int main(int argc __attribute__((unused)), char **arg);
 int buff_alloc(char *buf);
 int _strcomp(const char *strn1, const char *strn2);
 int strn_compl(const char *strn1, const char *strn2, size_t q);
-=======
 int exec_cmd(char *const *arg);
 
 /*dir change.c prototypes*/
@@ -116,8 +115,7 @@ int cd_wd(char *dir_path);
 int cd_before(void);
 
 /*to check*/
-void argument()
-
+void argument(void)
 /*set pwd functions*/
 
 
