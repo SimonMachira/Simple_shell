@@ -34,12 +34,12 @@ typedef struct mem_record
 } buff_list;
 
 /**
- * struct_shell_cmd - builtin functions
+ * struct shell_cmds - builtin functions
  * @command: command name
  * @pr: pointer to function
  */
 
-typedef struct_shell_cmds
+typedef struct shell_cmds
 {
 	char *command;
 	int (*pr)(char *const*);

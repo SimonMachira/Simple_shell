@@ -8,29 +8,29 @@
 
 int ext_command(char *const *arg)
 {
-	char **array_path = NULL;
+	char **array_p = NULL;
 	int condition, k;
 	pid_t pid;
 
 	if (path_exists(arg))
 	{
-		array_path = (char **)mal_alloc((char *)array_path, (sizeof(char *) * 2));
-		array_path[0] = mal_alloc(array_path[0], (sizeof(char) * (strn_len(arg[0]) + 1)));
-		copy_strnl(array_path[0], arg[0], strn_len(arg[0]));
-	array_path[1] = NULL;
+		array_p = (char **)mal_alloc((char *)array_p, (sizeof(char *) * 2));
+		array_p[0] = mal_alloc(array_p[0], (sizeof(char) * (strn_len(arg[0]) + 1)));
+		copy_strnl(array_p[0], arg[0], strn_len(arg[0]));
+	array_p[1] = NULL;
 	}
 	else
-		array_path = get_path(arg);
+		array_p = get_path(arg);
 
-	for (k = 0; array_path[j]; j++)
-		if (access(array_path[k], (R_OK | X_OK)) == 0)
+	for (k = 0; array_p[j]; j++)
+		if (access(array_p[k], (R_OK | X_OK)) == 0)
 		{
 			switch ((pid = fork()))
 			{
 				case -1:
 					return (-1);
 				case 0:
-					execve(array_path[k], arg, environ);
+					execve(array_p[k], arg, environ);
 					msg_err = 1;
 
 					exit(EXIT_FAILURE);
