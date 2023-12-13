@@ -25,7 +25,7 @@ ssize_t buff_cp(char **app_str, char *res_str, ssize_t *start)
 		*app_str = mal_alloc(*app_str, (sizeof(char) * (val_cp + *start + 1)));
 		if (!(*app_str))
 			return (-1);
-		copy_stinl((*app_str + *start), res_str, val_cp);
+		copy_strnl((*app_str + *start), res_str, val_cp);
 		buff_shft(res_str, (val_cp + 1));
 		return (val_cp);
 	}
