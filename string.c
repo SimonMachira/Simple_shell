@@ -26,7 +26,7 @@ size_t strn_len(const char *strng)
 }
 
 /**
- * _strcomp - a two  string comparison function
+ * str_comp - a two  string comparison function
  * @strn1: the string to compare first
  * @strn2: the string to compare second
  * Return: number
@@ -48,7 +48,7 @@ int str_comp(const char *strn1, const char *strn2)
 }
 
 /**
- * str_comp - a two string comparison function
+ * strn_compl - a two string comparison function
  * @strn1: first string to compare
  * @strn2: second string to compare
  * @q: n=sum of strings to compare

@@ -35,7 +35,7 @@ size_t path_avail(char *const *arg)
 	size_t nameOfpath = 0;
 	size_t k = 0;
 
-	for (;arg[0][k]; k++)
+	for (; arg[0][k]; k++)
 	{
 		if (arg[0][k] == '/')
 		{
