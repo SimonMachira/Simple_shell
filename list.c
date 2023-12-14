@@ -9,7 +9,7 @@
  *
  * Return: the size of the list
  */
-list_t add_node(list_t **head, const char *str, int num)
+list_t *add_node(list_t **head, const char *str, int num)
 {
 	list_t *new_head;
 
